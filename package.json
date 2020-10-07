@@ -1,0 +1,34 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-css-urls": "^0.2.2",
+    "gulp-load-plugins": "^2.0.4",
+    "gulp-replace": "^1.0.0",
+    "gulp-replace-image-src": "^1.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-scss": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-modify-css-urls": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndriyKontsevych/Logos-homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndriyKontsevych/Logos-homework/issues"
+  },
+  "homepage": "https://github.com/AndriyKontsevych/Logos-homework#readme"
+}
