@@ -1,0 +1,548 @@
+@mixin blur {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.001) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 4px;
+}
+
+
+.main {
+
+    //  ************************ section work
+    @mixin items {
+        position: relative;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        border-radius: 4px;
+    
+        .work-main-btn {
+            margin: 20px 0;
+            width: 70px;
+            height: 20px;
+            background: #FF4E50;
+            border-radius: 40px;
+            font-family: Montserrat;
+            font-size: 10px;
+            line-height: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 2px;
+            color: #FFFFFF;
+            z-index: 1;
+        }
+    
+        .work-main-btn:hover {
+            background-color: #ff9035;
+            cursor: pointer;
+        }
+    
+        h2 {
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 26px;
+            color: #FFFFFF;
+            margin: 10px 0;
+            z-index: 1;
+        }
+    
+        p {
+            font-family: Roboto;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: #E3E3E3;
+            margin: 10px 0;
+            z-index: 1;
+        }
+    
+        &:hover {
+            filter: brightness(115%);
+        }
+    }
+
+
+    .work {
+        margin: 75px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .caption {
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 26px;
+            line-height: 32px;
+            display: flex;
+            align-items: flex-end;
+            text-align: center;
+            color: #444444;
+        }
+
+        .work-main {
+            width: 940px;
+            height: 461px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+    
+            .work-main_item1 {
+                width: 300px;
+                height: 400px;
+                background-image: url(../images/Bitmap1.png);
+                @include items();
+            }
+
+            .work-main_item1::after{
+                @include blur();
+            }
+            
+            .work-main_item2 {
+                width: 300px;
+                height: 400px;
+                background-image: url(../images/Bitmap2.png);
+                @include items();
+
+                h2 {
+                    margin-bottom: 35px;
+                }
+            }
+
+            .work-main_item2::after{
+                @include blur();
+            }
+    
+            .work-main_item3 {
+                width: 300px;
+                height: 400px;
+                background-image: url(../images/Bitmap3.png);
+                @include items();
+            }
+
+            .work-main_item3::after{
+                @include blur();
+            }
+        }
+    }
+}
+
+
+// *************************   section partners 
+
+@mixin person {
+
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .contact-photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 126px;
+        height: 126px;
+        position: relative;
+        cursor: pointer;
+
+        img {
+            filter: contrast(115%);
+            border-radius: 50%; 
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            border: 3px solid #FFFFFF;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 90px;
+            left: 90px;
+            color: #FFFFFF;
+            background: #000;
+            cursor: pointer;
+
+            i {
+                zoom: 0.8;
+
+            }
+        }
+    }
+
+    .contact-name {
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        margin: 10px 0px;
+    }
+
+    .contact-info {
+        text-align: center;
+        width: 221px;
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        color: #666666;
+    }
+
+    &:hover {
+        .contact-photo {
+            filter: contrast(115%);
+            border: 5px solid #FF4E50;
+            border-radius: 50%;
+        }
+    }
+}
+
+.partners {
+    width: 941px;
+    height: 361px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .caption {
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: space-;
+        align-items: center;
+
+        .contact1 {
+            @include person();
+
+            .contact-photo {
+                .contact-icon {
+                    background-color: #FF4E50;
+                }
+            }
+        }
+
+        .contact2 {
+            @include person();
+
+            .contact-photo {
+                .contact-icon {
+                    background-color: #19D4CA;
+                }
+            }
+        }
+
+
+        .contact3 {
+            @include person();
+
+            .contact-photo {
+                .contact-icon {
+                    background-color: #FFA710;
+                }
+            }
+        }
+
+        .contact4 {
+            @include person();
+
+            .contact-photo {
+                .contact-icon {
+                    background-color: #667DF3;
+                }
+            }
+        }
+    }
+
+    .partners-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 40px;
+        border: 2px solid #FF4E50;
+        box-sizing: border-box;
+        border-radius: 40px;
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 14px;
+        color: #FF4E50;
+        cursor: pointer;
+    }
+
+    .partners-btn:hover {
+        border: none;
+        color: #FFFFFF;
+        background-color: #ff9035;  
+    }
+}
+
+// ********************** sectin ideas 
+
+@mixin blocs {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin bloc {
+    position: relative;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+
+    p {
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+        color: #FFFFFF;
+        z-index: 1;
+        text-align: center;
+    }
+
+    &:hover {
+
+        filter: brightness(125%);
+        p {
+            transition: all .5s;
+            font-size: 24px;
+            text-shadow: 2px 2px #2b2b2b;
+        }
+    }
+}
+
+@keyframes slayder {
+
+    0% {
+        background-image: url(../images/ideas4.png);
+    }
+
+    35% {
+        background-image: url(../images/ideas4.png);
+    }
+
+    40% {
+        background-image: url(../images/ideas5.png);
+    }
+
+    63% {
+        background-image: url(../images/ideas5.png);
+    }
+
+    70% {
+        background-image: url(../images/ideas6.png);
+    }
+
+    95% {
+        background-image: url(../images/ideas6.png);
+    }
+
+    100% {
+        background-image: url(../images/ideas4.png);
+    }
+}
+
+.ideas {
+    width: 940px;
+    height: 1031px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 70px auto;
+
+    .ideas-caption{
+        margin: 30px 0;
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px;
+        color: #444444;
+    }
+
+    .ideas-content {
+
+        
+            .bloc1 {
+                @include blocs();
+
+                .sport {
+                    width: 300px;
+                    height: 310px;
+                    background-image: url(../images/ideas.png);
+                    @include bloc();
+                }
+
+                .sport::after {
+                    @include blur();
+                }
+
+                .wellnes {
+                    width: 300px;
+                    height: 310px;
+                    background-image: url(../images/ideas1.png);
+                    @include bloc();
+                }
+
+                .wellnes::after {
+                    @include blur();
+                }
+
+                .extreme {
+                    width: 300px;
+                    height: 310px;
+                    background-image: url(../images/ideas2.png);
+                    @include bloc();
+
+                    p {
+                        padding: 50px;
+                    }
+                }
+
+                .extreme::after {
+                    @include blur();
+                }
+            }
+        
+            .bloc2 {
+                @include blocs();
+                
+                .game {
+                    width: 300px;
+                    height: 310px;
+                    background-image: url(../images/ideas3.png);
+                    @include bloc();
+                }
+
+                .game::after {
+                    @include blur();
+                }
+
+                .culture {
+                    width: 620px;
+                    height: 310px;
+                    animation: slayder 6s linear infinite;
+                    @include bloc();
+                }
+
+                .culture::after {
+                    @include blur();
+                }
+            }
+        
+            .bloc3 {
+                @include blocs();
+
+                .enjomet {
+                    width: 620px;
+                    height: 310px;
+                    background-image: url(../images/ideas7.png);
+                    @include bloc();
+                }
+
+                .enjomet::after {
+                    @include blur();
+                }
+
+                .travelling {
+                    width: 300px;
+                    height: 310px;
+                    background-image: url(../images/ideas8.png);
+                    @include bloc();
+                }
+
+                .travelling::after {
+                    @include blur();
+                }
+            }
+    }
+}
+
+// ******************** section search
+
+.search {
+    width: 482px;
+    height: 158px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .search-caption {
+        font-family: Montserrat;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px;
+        color: #444444;
+    }
+
+    .search-text {
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 14px;
+        color: #666666;
+        margin-top: 40px;
+    }
+
+    .search-base {
+        width: 482px;
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        
+        input {
+            width: 299px;
+            height: 40px;
+            border: 1px solid #D4D4D4;
+            box-sizing: border-box;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+            border-radius: 3px;
+            padding: 10px;
+        }
+
+        .search-btn {
+            width: 172.12px;
+            height: 40px;
+            margin: 0 10px;
+            background: #FF4E50;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 14px;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #ff9035;
+        }
+    }
+}

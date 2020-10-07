@@ -1,0 +1,19 @@
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'response';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+
+
+
